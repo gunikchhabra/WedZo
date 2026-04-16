@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerPlate") %>
+<br />
+
+<h1 style="text-align: center; font-size: 2rem; margin-left: 5px; ">Your Fashion Journey Starts Here ✨</h1>
+<br>
+<div style=" width: 800px; margin-left: auto; margin-right: auto;">
+    <form class="max-w-sm mx-auto" action="/user/login" method="POST">
+  
+  <div class="mb-5 mt-5">
+
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">
+      User Name
+    </label>
+    <input type="text" id="username" name="username"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="ABC" required />
+  </div>
+
+    <div class="mb-5 mt-5">
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">
+      Your Mail Id
+    </label>
+    <input type="email" id="email" name="email"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="name@example.com" required />
+    </div>
+
+
+      <div class="mb-5  mt-5">
+    <label for="password" class="block mb-2 text-sm font-medium text-gray-900">
+      Your password
+    </label>
+    <input type="password" id="password" name="password"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="••••••••" required />
+  </div>
+
+
+  <label for="remember" class="flex items-center mb-5">
+    <input id="remember" type="checkbox"
+      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-2 focus:ring-blue-300"
+      required />
+    <p class="ml-2 text-sm font-medium text-gray-900 select-none">
+      I agree with the 
+      <a href="#" class="text-[#b8965a] hover:underline">terms and conditions</a>.
+    </p>
+  </label>
+
+  <button type="submit"
+    class="bg-[#b8965a] text-white shadow-sm font-medium rounded-lg text-sm px-4 py-2.5 hover:scale-105 transition duration-300 ease-in-out">
+    Login
+  </button>
+<br /> <br />
+  <a class="text-[#66442c] hover:underline transition duration-300" href="/user/signup">New here ? Let’s get you styled &hearts;</a>
+</form>
+
+</div>
+
+ 
+

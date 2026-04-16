@@ -1,0 +1,136 @@
+<% layout("/layouts/boilerPlate") %>
+
+<div class="max-w-7xl mx-auto px-6 mt-10">
+
+  <!-- Heading -->
+  <% if(!isShop) { %>
+    <h1 class="text-center text-3xl font-semibold text-[#3e2f23] tracking-wide">
+      <%= shopName %>
+    </h1>
+    <p class="text-center text-gray-500 italic mt-2 mb-8">
+      Discover the latest styles curated just for you ♥
+    </p>
+  <% } %>
+
+  <% if(isShop) { %>
+    <h1 class="text-center text-3xl font-semibold text-[#3e2f23] tracking-wide">
+      Welcome to Your Store — <%= shopName %>
+    </h1>
+    <p class="text-center text-gray-500 italic mt-2 mb-8">
+      Manage your collection effortlessly ♥
+    </p>
+  <% } %>
+
+  <!-- Products Grid -->
+  <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+    <% for (let product of data) { %>
+
+    <div class="bg-[#f9f6f2] rounded-2xl overflow-hidden border border-[#e0d8cc] 
+                shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+      <!-- Image -->
+      <div class="w-full aspect-[4/5]">
+        <img src="<%= product.images[0] %>" 
+             class="w-full h-full object-contain">
+      </div>
+
+      <!-- Content -->
+      <div class="p-5">
+
+        <h5 class="text-lg font-semibold text-[#3e2f23]">
+          <%= product.name %>
+        </h5>
+
+        <p class="text-sm text-gray-500">
+          <%= product.category %>
+        </p>
+
+        <p class="text-md font-medium text-[#3e2f23] mt-1">
+          ₹ <%= product.price.toLocaleString("en-IN") %>
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex gap-3 mt-4">
+
+          <a href="#"
+             class="flex-1 text-center border border-[#b8965a] text-[#3e2f23] 
+                    py-2 rounded-full hover:bg-[#f3e8d9] transition text-sm">
+            View
+          </a>
+
+          <a href="/cart/addToCart/<%=shopId%>/<%=product._id%>"
+             class="flex-1 text-center bg-[#b8965a] text-white 
+                    py-2 rounded-full hover:bg-[#a6844d] transition text-sm shadow-sm">
+            Add
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <% } %>
+
+  </div>
+
+  <!-- Add Product (Shop only) -->
+  <% if(isShop) { %>
+    <div class="flex justify-center mt-10">
+      <a href="/addProduct/<%= shopId %>" 
+         class="bg-[#3e2f23] text-white px-6 py-2 rounded-full 
+                hover:bg-[#2a1f17] transition">
+        + Add Product
+      </a>
+    </div>
+  <% } %>
+
+  <!-- Reviews -->
+  <div class="mt-16">
+
+    <h2 class="text-center text-xl font-semibold text-[#3e2f23]">
+      Reviews ⭐
+    </h2>
+
+    <% if(reviews.length === 0) { %>
+      <p class="text-center text-gray-500 mt-4">
+        No reviews yet. Be the first one!
+      </p>
+    <% } %>
+
+    <div class="grid gap-6 mt-6 sm:grid-cols-1 md:grid-cols-2">
+
+      <% for(let review of reviews) { %>
+
+      <div class="bg-white border border-[#e0d8cc] rounded-2xl p-5 shadow-sm">
+
+        <p class="text-sm text-gray-500 mb-1">
+          <%= review.username %>
+        </p>
+
+        <h5 class="text-md font-medium text-[#3e2f23]">
+          <%= review.comment %>
+        </h5>
+
+        <p class="text-sm text-[#b8965a] mt-2">
+          ⭐ <%= review.rating %>
+        </p>
+
+      </div>
+
+      <% } %>
+
+    </div>
+
+    <!-- Add review -->
+    <div class="flex justify-center mt-8">
+      <a href="/addreview/<%=shopId%>" 
+         class="text-[#b8965a] hover:underline">
+        Add a review
+      </a>
+    </div>
+
+  </div>
+
+</div>

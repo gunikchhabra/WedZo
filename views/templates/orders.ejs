@@ -1,0 +1,88 @@
+<% layout("layouts/boilerplate.ejs") %>
+
+<% if(!hasOrdered){ %>
+  <div class="flex flex-col items-center justify-center min-h-[70vh] text-center">
+    
+    <div class="bg-white p-10 rounded-2xl shadow-lg border border-gray-100">
+      <h2 class="text-xl font-semibold mb-2">No Orders Yet</h2>
+      
+      <p class="text-gray-500 mb-6 text-sm">
+        Looks like you haven’t ordered anything yet.
+      </p>
+
+      <a href="/" 
+         class="px-6 py-2.5 rounded-lg bg-black text-white text-sm font-medium 
+                hover:bg-gray-800 transition-all duration-200 shadow-md">
+        Start Shopping
+      </a>
+    </div>
+
+  </div>
+<% } %>
+
+
+
+<% if(hasOrdered){ %> 
+
+  <div class="max-w-6xl mx-auto px-6 py-10">
+
+    <!-- Heading -->
+    <h1 class="text-3xl font-semibold mb-8 text-gray-800">
+      Your Orders
+    </h1>
+
+    <!-- Orders List -->
+    <div class="space-y-6">
+
+      <% data.forEach((order) => { %>
+
+        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-lg transition duration-300">
+          
+          <!-- Top Section -->
+          <div class="flex justify-between items-center mb-4">
+            
+            <div>
+              <p class="text-sm text-gray-500">Order ID</p>
+              <p class="font-medium text-gray-800"><%= order._id %></p>
+            </div>
+
+            <div class="text-right">
+              <p class="text-sm text-gray-500">Expected Delivery</p>
+              <p class="font-medium text-gray-800">
+                <%= new Date(order.ExpDel).toDateString() %>
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Divider -->
+          <div class="border-t border-gray-100 my-4"></div>
+
+          <!-- Bottom Section -->
+          <div class="flex justify-between items-center">
+
+            <div>
+              <p class="text-sm text-gray-500">Items</p>
+              <p class="font-medium text-gray-800">
+                <%= order.items.length %> item(s)
+              </p>
+            </div>
+
+            <div class="text-right">
+              <p class="text-sm text-gray-500">Total Amount</p>
+              <p class="text-lg font-semibold text-black">
+                ₹ <%= order.totalAmt %>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      <% }) %>
+
+    </div>
+
+  </div>
+
+<% } %>

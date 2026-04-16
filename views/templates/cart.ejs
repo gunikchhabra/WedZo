@@ -1,0 +1,140 @@
+<% layout("/layouts/boilerplate") %>
+<% if(empty){ %>
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center">
+
+    <div class="w-20 h-20 flex items-center justify-center rounded-full bg-[#f5efe6] mb-6 shadow-sm">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+   
+    <h1 class="text-3xl font-semibold text-gray-800 mb-2 tracking-tight">
+      Your Cart is Empty
+    </h1>
+
+  
+    <p class="text-gray-500 mb-6 text-sm">
+      Looks like you haven’t added anything yet.
+    </p>
+
+    <a href="/" 
+       class="px-6 py-2.5 rounded-lg bg-black text-white text-sm font-medium 
+              hover:bg-gray-800 transition-all duration-200 shadow-md">
+      Start Shopping
+    </a>
+
+  </div>
+<% } %>
+
+<% if(!empty){%> 
+  <h1 class="text-center text-2xl font-semibold ">
+  Your Cart ♥
+</h1>
+
+<p class="text-center text-purple-900 italic mt-1">
+  Delivering to @<%= username %>
+</p>
+
+<div class="max-w-6xl mx-auto px-6 py-8 flex flex-col lg:flex-row gap-8">
+
+  <!-- LEFT: CART ITEMS -->
+  <div class="lg:w-2/3 space-y-6">
+
+    <% let total = 0; %>
+
+    <% for(let obj of data){ %>
+
+    <div class="max-w-sm mx-auto rounded-2xl overflow-hidden 
+                bg-[#f9f6f2] border border-[#e0d8cc] 
+                shadow-sm hover:shadow-lg transition">
+
+      <!-- Image -->
+      <div class="w-full aspect-square bg-white flex items-center justify-center">
+        <img src="<%= obj.images[0] %>" 
+             class="max-h-full object-contain">
+      </div>
+
+      <!-- Content -->
+      <div class="p-5">
+
+        <h5 class="text-lg font-semibold text-[#3e2f23]">
+          <%= obj.name %>
+        </h5>
+
+        <p class="text-sm text-gray-500 mt-1">
+          ₹ <%= obj.price.toLocaleString("en-IN") %>
+        </p>
+
+        <p class="text-sm text-gray-600 mt-1">
+          Quantity: <span class="font-medium"><%= obj.qty %></span>
+        </p>
+
+        <!-- Actions -->
+        <div class="flex justify-between items-center mt-4 text-sm">
+
+          <div class="flex gap-3">
+            <a href="/cart/decQty/<%=obj.prodId%>/<%=_id%>" 
+               class="px-2 py-1 border border-[#d6cfc4] rounded-md hover:bg-[#eee6d8] transition">
+              −
+            </a>
+
+            <a href="/cart/incQty/<%=obj.prodId%>/<%=_id%>" 
+               class="px-2 py-1 border border-[#d6cfc4] rounded-md hover:bg-[#eee6d8] transition">
+              +
+            </a>
+          </div>
+
+          <a href="/cart/remove/<%=obj.prodId%>/<%=_id%>" 
+             class="text-red-500 hover:underline">
+            Remove
+          </a>
+
+        </div>
+
+        <% total += (obj.qty * obj.price); %>
+
+      </div>
+
+    </div>
+
+    <% } %>
+
+  </div>
+
+  <div class="lg:w-1/3 bg-white p-6 rounded-xl shadow h-fit">
+
+  <h2 class="text-xl font-semibold mb-4 text-blue-900 underline underline-offset-4">Order Summary</h2>
+
+  <p class="flex justify-between mt-2 text-lg font-bold">
+    <% for(let obj of data){ %>
+        <%let price = (obj.qty * obj.price )%>
+        <div class="flex">
+            <div class="w-1/2 font-semibold"><%=obj.name%></div>
+            <div class="w-1/2 text-right">Rs. <%=price.toLocaleString("en-IN")%></div>
+        </div>
+        <br />
+        <%}%>
+
+  
+  </p>
+
+  <p class="flex justify-between">
+    <span class="font-semibold ">GST (5%)</span>
+    <% let gst = 0.05*total %>
+    <% total=total+gst%>
+    <span class="font-semibold ">₹ <%= gst.toLocaleString("en-IN") %></span>
+  </p>
+
+  <p class="flex justify-between">
+    <span class="font-semibold ">Total</span>
+    <span class="font-semibold ">₹ <%= total.toLocaleString("en-IN") %></span>
+  </p>
+ 
+  <button class="w-full mt-6 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
+    <a href="/order/checkout">Proceed to Checkout</a>
+  </button>
+
+</div>
+</div>
+  <%}%>  
+
+

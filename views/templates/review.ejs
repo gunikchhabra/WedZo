@@ -1,0 +1,56 @@
+<% layout("/layouts/boilerPlate") %>
+<br />
+
+<h1 style="text-align: center; font-size: 2rem; margin-left: 5px; ">Rate Your Experience With Us 🔥</h1>
+<br>
+<div style="margin-left: auto; margin-right: auto;">
+
+
+<form class="max-w-sm mx-auto" action="/addReview/<%=shopId%>" method="POST">
+  <div class="mb-5 mt-5">
+
+    <label for="comment" class="block mb-2 text-sm font-medium text-gray-900">
+      Comments:
+    </label>
+    <textarea type="text" id="comment" name="comment"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm placeholder-gray-400"
+       required>
+    </textarea>
+    <br />
+  <form>
+    <!-- Change starability-basic to different class to see animations. -->
+    <fieldset class="starability-growRotate">
+      <h1>Ratings :</h1>
+      <br>
+      <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+
+      <input type="radio" id="rate1" name="rating" value="1" />
+      <label for="rate1">1 star.</label>
+
+      <input type="radio" id="rate2" name="rating" value="2" />
+      <label for="rate2">2 stars.</label>
+
+      <input type="radio" id="rate3" name="rating" value="3" />
+      <label for="rate3">3 stars.</label>
+
+      <input type="radio" id="rate4" name="rating" value="4" />
+      <label for="rate4">4 stars.</label>
+
+      <input type="radio" id="rate5" name="rating" value="5" />
+      <label for="rate5">5 stars.</label>
+
+      <span class="starability-focus-ring"></span>
+    </fieldset>
+  </form>
+
+  <br>
+  <button type="submit"
+    class="bg-[#FF92A5] text-white shadow-sm font-medium rounded-lg text-sm px-4 py-2.5 hover:bg-[#ff7f96] hover:scale-105 transition duration-300 ease-in-out">
+    Submit
+  </button>
+
+</form>
+</div>
+
+ 
+

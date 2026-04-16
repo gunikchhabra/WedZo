@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerPlate") %>
+<br />
+
+<h1 style="text-align: center; font-size: 2rem; ">Add Something New To Your Shop</h1>
+<div style=" width: 800px; margin-left: auto; margin-right: auto;">
+    <form class="max-w-sm mx-auto" action="/addProduct/<%=shopRef %>" method="POST" enctype="multipart/form-data">
+  
+  <div class="mb-5 mt-3">
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">
+     Product Name
+    </label>
+    <input type="text" id="productname" name="name"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="Lehnga" required />
+  </div>
+
+  <div class="mb-5 mt-5">
+
+    <label for="category" class="block mb-2 text-sm font-medium text-gray-900">
+      Category
+    </label>
+    <input type="text" id="category" name="category"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="Lehnga , Gowns or Something else !" required />
+  </div>
+
+<div class="mb-5 mt-5">
+
+    <label for="address" class="block mb-2 text-sm font-medium text-gray-900">
+     Price 
+    </label>
+    <input type="number" id="price" name="price"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="amount in rupees" required />
+  </div>
+
+     <div class="mb-5  mt-5">
+    <label for="ProductImage" class="block mb-2 text-sm font-medium text-gray-900">
+      Product Images
+    </label>
+    <input type="file" id="ProductImage" name="images"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+       required multiple />
+  </div>
+
+  <button type="submit" style="background-color:#FF92A5"
+    class="text-white shadow-sm font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none transition duration-200">
+   Add Product
+  </button>
+<br /> <br />
+ 
+</form>
+
+</div>
+
+ 
+

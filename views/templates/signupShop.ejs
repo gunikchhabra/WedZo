@@ -1,0 +1,97 @@
+<% layout("/layouts/boilerPlate") %>
+<br />
+
+<h1 style="text-align: center; font-size: 2rem; ">Register Your Shop with Wedzo</h1>
+
+<div style=" width: 800px; margin-left: auto; margin-right: auto;">
+    <form class="max-w-sm mx-auto" action="/shop/signup" method="POST" enctype="multipart/form-data">
+  
+  <div class="mb-5 mt-3">
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">
+      Owner Name
+    </label>
+    <input type="text" id="username" name="username"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="ABC" required />
+  </div>
+
+  <div class="mb-5 mt-5">
+
+    <label for="shopName" class="block mb-2 text-sm font-medium text-gray-900">
+      Shop Name
+    </label>
+    <input type="text" id="shopname" name="shopName"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="ABC" required />
+  </div>
+
+<div class="mb-5 mt-5">
+
+    <label for="address" class="block mb-2 text-sm font-medium text-gray-900">
+    Address
+    </label>
+    <input type="text" id="address" name="address"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="ABC" required />
+  </div>
+
+  
+  <div class="mb-5  mt-5">
+    <label for="contactNo" class="block mb-2 text-sm font-medium text-gray-900">
+      Owner's Contact Number
+    </label>
+    <input type="Number" id="contactNo" name="contactNo"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="98168XXXXX" required />
+  </div>
+
+    <div class="mb-5 mt-5">
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">
+      Owner's Mail Id
+    </label>
+    <input type="email" id="email" name="email"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="name@example.com" required />
+    </div>
+
+     <div class="mb-5  mt-5">
+    <label for="shopImage" class="block mb-2 text-sm font-medium text-gray-900">
+      Shop Image ( select 1 file )
+    </label>
+    <input type="file" id="shopImage" name="shopImage"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+       required />
+  </div>
+
+    <div class="mb-5  mt-5">
+    <label for="password" class="block mb-2 text-sm font-medium text-gray-900">
+      Your password
+    </label>
+    <input type="password" id="password" name="password"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder-gray-400"
+      placeholder="••••••••" required />
+  </div>
+
+
+  <label for="remember" class="flex items-center mb-5">
+    <input id="remember" type="checkbox"
+      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-2 focus:ring-blue-300"
+      required />
+    <p class="ml-2 text-sm font-medium text-gray-900 select-none">
+      I agree with the 
+      <a href="#" class="text-blue-600 hover:underline">terms and conditions</a>.
+    </p>
+  </label>
+
+  <button type="submit"
+    class="bg-[#b8965a] text-white shadow-sm font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none transition duration-200">
+    Sign Up
+  </button>
+<br /> <br />
+ 
+</form>
+
+</div>
+
+ 
+
