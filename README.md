@@ -91,4 +91,4 @@ Wedzo aims to simplify this by bringing multiple boutiques onto a single platfor
 ## Contact  
 
 For feedback or suggestions, feel free to reach out.
-📧 [Click here to email](mailto:chhabragunik21@gmail.com@gmail.com)
+📧 [Click here to email](mailto:chhabragunik21@gmail.com)
