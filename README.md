@@ -57,7 +57,7 @@ Wedzo aims to simplify this by bringing multiple boutiques onto a single platfor
 ![Login](./WedZo_SC/LoginPage.png)
 
 ### 📝 Signup  
-![Signup](./WedZo_SC/SignupPage.png)
+![Signup](./WedZo_SC/SignUpPage.png)
 
 ### 🛒 Cart  
 ![Cart](./WedZo_SC/Cart.png)
@@ -74,30 +74,37 @@ Wedzo aims to simplify this by bringing multiple boutiques onto a single platfor
 ### 💬 Support  
 ![Support](./WedZo_SC/Support.png)
 
+
 ## Run Locally 
  - Clone the Project
-  ```bash
-  git clone https://github.com/gunikchhabra/WedZo.git
+   ```bash
+   git clone https://github.com/gunikchhabra/WedZo.git
+   ```
+   
  - Navigate to project directory
-  ```bash
-  npm install
-
+   ```bash
+   cd WedZo
+   ```
+   
  - Setup environment variables
-  Create a .env file and add:
-    MONGO_URI=your_mongodb_connection_string
-    CLOUDINARY_CLOUD_NAME=your_cloud_name
-    CLOUDINARY_KEY=your_api_key
-    CLOUDINARY_SECRET=your_api_secret
-    SESSION_SECRET=your_secret_key
+   - Create a .env file and add:
+     ```env
+     MONGO_URI=your_mongodb_connection_string
+     CLOUDINARY_CLOUD_NAME=your_cloud_name
+     CLOUDINARY_KEY=your_api_key
+     CLOUDINARY_SECRET=your_api_secret
+     SESSION_SECRET=your_secret_key
+     ```
 
+   
  - Start the server
- ```bash
-  node index.js
+   ```bash
+   node index.js
+   ```
 
- -Open in Browser
-```bash
-http://localhost:8080/
-
+- Open in Browser  
+  - Visit the application at: http://localhost:8080/
+   
 
 
 ##  Future Improvements  
