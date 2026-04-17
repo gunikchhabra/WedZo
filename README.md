@@ -85,6 +85,10 @@ Wedzo aims to simplify this by bringing multiple boutiques onto a single platfor
    ```bash
    cd WedZo
    ```
+ - Install Dependencies
+   ```bash
+   npm install
+   ```
    
  - Setup environment variables
    - Create a .env file and add:
