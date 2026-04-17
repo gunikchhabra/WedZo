@@ -57,10 +57,10 @@ Wedzo aims to simplify this by bringing multiple boutiques onto a single platfor
 ![Login](./WedZo_SC/LoginPage.png)
 
 ### 📝 Signup  
-![Signup](./WedZo_SC/SignuPage.png)
+![Signup](./WedZo_SC/SignupPage.png)
 
 ### 🛒 Cart  
-![Cart](./WedZo_SC/cart.png)
+![Cart](./WedZo_SC/Cart.png)
 
 ### 📦 Orders  
 ![Orders](./WedZo_SC/Orders.png)
